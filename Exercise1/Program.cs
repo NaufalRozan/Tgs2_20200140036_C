@@ -9,7 +9,7 @@ namespace Exercise1
 {
     class Program
     {
-        public void CreateTable()
+        /*public void CreateTable()
         {
             SqlConnection con = null;
             try
@@ -41,11 +41,90 @@ namespace Exercise1
             {
                 con.Close();
             }
+        }*/
+
+        public void InsertData()
+        {
+            SqlConnection con = null;
+            try
+            {
+                con = new SqlConnection("data source=MSI;database=TGS2PABD;Integrated Security=TRUE");
+                con.Open();
+
+                SqlCommand ksr = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR01','Naufal','1')", con);
+                ksr.ExecuteNonQuery();
+
+                SqlCommand ksr1 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR02','Rozan','1')", con);
+                ksr1.ExecuteNonQuery();
+
+                SqlCommand ksr2 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR03','Bila','2')", con);
+                ksr2.ExecuteNonQuery();
+
+                SqlCommand ksr3 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR04','Adit','3')", con);
+                ksr3.ExecuteNonQuery();
+
+                SqlCommand ksr4 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR04','Adit','3')", con);
+                ksr4.ExecuteNonQuery();
+
+
+                SqlCommand pbl = new SqlCommand("insert into Pembeli (Id_Pembeli, Nama_Pembeli, Telepon_Pembeli)" + "values('PBL01','Pablo','083278238820')", con);
+                pbl.ExecuteNonQuery();
+
+                SqlCommand pbl1 = new SqlCommand("insert into Pembeli (Id_Pembeli, Nama_Pembeli, Telepon_Pembeli)" + "values('PBL02','Hotman','0837898238820')", con);
+                pbl1.ExecuteNonQuery();
+
+                SqlCommand pbl2 = new SqlCommand("insert into Pembeli (Id_Pembeli, Nama_Pembeli, Telepon_Pembeli)" + "values('PBL03','Paris','0832782989820')", con);
+                pbl2.ExecuteNonQuery();
+
+                SqlCommand pbl3 = new SqlCommand("insert into Pembeli (Id_Pembeli, Nama_Pembeli, Telepon_Pembeli)" + "values('PBL04','Alex','083278236760')", con);
+                pbl3.ExecuteNonQuery();
+
+                SqlCommand pbl4 = new SqlCommand("insert into Pembeli (Id_Pembeli, Nama_Pembeli, Telepon_Pembeli)" + "values('PBL05','Sara','083278455430')", con);
+                pbl4.ExecuteNonQuery();
+
+
+                SqlCommand brg = new SqlCommand("insert into Barang (Kode_Barang, Nama_Barang, Harga_Barang, Jumlah_Barang)" + "values('BL001', 'Bolu', '30000','3')", con);
+                brg.ExecuteNonQuery();
+
+                SqlCommand brg1 = new SqlCommand("insert into Barang (Kode_Barang, Nama_Barang, Harga_Barang, Jumlah_Barang)" + "values('BF001', 'Black Forest', '45000','2')", con);
+                brg1.ExecuteNonQuery();
+
+                SqlCommand brg2 = new SqlCommand("insert into Barang (Kode_Barang, Nama_Barang, Harga_Barang, Jumlah_Barang)" + "values('RV201', 'Red Velvet', '20000','5')", con);
+                brg2.ExecuteNonQuery();
+
+                SqlCommand brg3 = new SqlCommand("insert into Barang (Kode_Barang, Nama_Barang, Harga_Barang, Jumlah_Barang)" + "values('CR539', 'Croffle', '15000','3')", con);
+                brg3.ExecuteNonQuery();
+
+                SqlCommand brg4 = new SqlCommand("insert into Barang (Kode_Barang, Nama_Barang, Harga_Barang, Jumlah_Barang)" + "values('PI021', 'Pie, '4000','10')", con);
+                brg4.ExecuteNonQuery();
+
+
+                SqlCommand trk = new SqlCommand("insert into Transaksi (Kode_Transaksi, Tanggal, Waktu)" + "values('TRK01','date','time')", con);
+                trk.ExecuteNonQuery();
+
+                SqlCommand trk1 = new SqlCommand("insert into Transaksi (Kode_Transaksi, Tanggal, Waktu)" + "values('TRK02','date','time')", con);
+                trk1.ExecuteNonQuery();
+                
+                SqlCommand trk2 = new SqlCommand("insert into Transaksi (Kode_Transaksi, Tanggal, Waktu)" + "values('TRK03','date','time')", con);
+                trk2.ExecuteNonQuery();
+
+                SqlCommand trk3 = new SqlCommand("insert into Transaksi (Kode_Transaksi, Tanggal, Waktu)" + "values('TRK04','date','time')", con);
+                trk3.ExecuteNonQuery();
+
+                SqlCommand trk4 = new SqlCommand("insert into Transaksi (Kode_Transaksi, Tanggal, Waktu)" + "values('TRK05','date','time')", con);
+                trk4.ExecuteNonQuery();
+
+                Console.WriteLine("Data Berhasil di Input...");
+
+
+
+            }
         }
+
         static void Main(string[] args)
         {
-            new Program().CreateTable();
-            //new Program().InsertData();
+            //new Program().CreateTable();
+            new Program().InsertData();
         }
     }
 }
