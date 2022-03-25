@@ -19,6 +19,11 @@ namespace Exercise1
 
                 SqlCommand ksr = new SqlCommand("create table Kasir (Id_Kasir char(5) Primary Key," + "Nama_Kasir varchar(25), Kassa varchar(2))", con);
                 ksr.ExecuteNonQuery();
+
+                SqlCommand pbl = new SqlCommand("create table Pembeli (Id_Pembeli char(5) Primary Key," + "Nama_Pembeli varchar(25), Telepon_Pembeli varchar(13))", con);
+                pbl.ExecuteNonQuery();
+
+                
             }
         }
     }
