@@ -12,6 +12,11 @@ namespace Exercise1
         public void CreateTable()
         {
             SqlConnection con = null;
+            try
+            {
+                con = new SqlConnection("data source=MSI;database=Exercise1;Integrated Security=TRUE");
+                con.Open();
+            }
         }
     }
 }
