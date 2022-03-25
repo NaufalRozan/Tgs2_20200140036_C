@@ -63,7 +63,7 @@ namespace Exercise1
                 SqlCommand ksr3 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR04','Adit','3')", con);
                 ksr3.ExecuteNonQuery();
 
-                SqlCommand ksr4 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR04','Adit','3')", con);
+                SqlCommand ksr4 = new SqlCommand("insert into Kasir (Id_Kasir, Nama_Kasir, Kassa)" + "values('KSR05','Budi','3')", con);
                 ksr4.ExecuteNonQuery();
 
 
@@ -115,9 +115,15 @@ namespace Exercise1
                 trk4.ExecuteNonQuery();
 
                 Console.WriteLine("Data Berhasil di Input...");
-
-
-
+                Console.ReadKey();
+            }catch(Exception e)
+            {
+                Console.WriteLine("Gagal Menginput Data..." + e);
+                Console.ReadKey();
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
