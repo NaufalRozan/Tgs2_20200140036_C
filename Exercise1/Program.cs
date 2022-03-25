@@ -28,6 +28,18 @@ namespace Exercise1
 
                 SqlCommand trk = new SqlCommand("create table Transaksi (Kode_Transaksi char(5) Primary Key," + "Id_Kasir char(5) foreign key references Kasir(Id_Kasir), Id_Pembeli char(5) foreign key references Pembeli(Id_Pembeli), Kode_Barang char(5) foreign key references Barang(Kode_Barang), Tanggal date, Waktu time)", con);
                 trk.ExecuteNonQuery();
+
+                Console.WriteLine("Table Berhasil Dibuat...");
+                Console.ReadKey();
+
+            } catch (Exception e)
+            {
+                Console.WriteLine("Gagal Membuat Tabel..." + e);
+                Console.ReadKey();
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }
