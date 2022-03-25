@@ -16,6 +16,8 @@ namespace Exercise1
             {
                 con = new SqlConnection("data source=MSI;database=Exercise1;Integrated Security=TRUE");
                 con.Open();
+
+                SqlCommand ksr = new SqlCommand("create table Kasir (Id_Kasir char(5) Primary Key," + "Nama_Kasir varchar(25), Kassa varchar(2))", con);
             }
         }
     }
